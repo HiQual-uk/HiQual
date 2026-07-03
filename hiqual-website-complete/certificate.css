@@ -1,0 +1,139 @@
+/* =========================================================
+   certificate.css — Certificate Verification page styling
+   ========================================================= */
+
+/* ---------- Page header banner ---------- */
+.page-hero{
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, var(--navy-deep) 100%);
+  color:#fff;
+  padding: 64px 0 56px;
+  text-align:center;
+}
+.page-hero .eyebrow{ justify-content:center; display:flex; gap:8px; }
+.page-hero h1{
+  font-family: var(--font-display); font-weight:800;
+  font-size: clamp(28px, 4.5vw, 42px); margin: 12px 0 14px;
+}
+.page-hero p{ color:#C8D2E0; max-width:560px; margin:0 auto; font-size:15px; }
+
+/* ---------- Search box ---------- */
+.verify-search-section{ padding-top:60px; }
+.verify-search-box{
+  max-width:640px; margin:0 auto 40px;
+  background:#fff; border:1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding:30px;
+}
+.verify-search-box label{
+  display:block; font-weight:600; font-size:14px; color:var(--navy); margin-bottom:10px;
+}
+.search-row{ display:flex; gap:12px; }
+.search-row input{
+  flex:1; padding:14px 16px; border:1.5px solid var(--border); border-radius:6px; font-size:15px;
+}
+.search-row input:focus{ outline:2px solid var(--orange); border-color:var(--orange); }
+.search-row .btn{ white-space:nowrap; }
+.search-hint{ font-size:13px; color:var(--text-muted); margin-top:14px; }
+
+/* ---------- Empty / not found states ---------- */
+.result-placeholder{
+  max-width:640px; margin:0 auto; text-align:center;
+  padding:50px 20px; color: var(--text-muted);
+}
+.result-placeholder i{ font-size:40px; color:#C7D0DA; margin-bottom:14px; display:block; }
+
+.result-notfound{
+  max-width:640px; margin:0 auto; text-align:center;
+  background:#FFF3F0; border:1.5px solid #F3B7A6; border-radius: var(--radius);
+  padding:44px 24px;
+}
+.result-notfound i{ font-size:44px; color:#D8442B; margin-bottom:14px; }
+.result-notfound h3{ font-family:var(--font-display); font-size:22px; color:#8A2C1B; margin-bottom:8px; }
+.result-notfound p{ color:#9A4A38; font-size:14px; max-width:420px; margin:0 auto; }
+
+/* ---------- Certificate Box (the verified result) ---------- */
+.cert-box{
+  max-width:680px; margin:0 auto;
+  background:#fff;
+  border:3px double var(--navy);
+  border-radius:12px;
+  padding:34px 36px 40px;
+  position:relative;
+  box-shadow: 0 16px 40px rgba(11,37,69,0.14);
+}
+
+.cert-thankyou{
+  text-align:center;
+  font-family: var(--font-display);
+  font-weight:600;
+  font-size:16px;
+  color: var(--navy);
+  letter-spacing:.3px;
+  margin-bottom:18px;
+  padding-bottom:16px;
+  border-bottom:1.5px dashed var(--border);
+}
+
+/* Header: small logo in corner, crest centered large */
+.cert-header{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:18px;
+  min-height:120px;
+}
+.cert-corner-logo{
+  position:absolute;
+  top:0; left:0;
+  height:34px;
+  width:auto;
+}
+.cert-crest{
+  height:120px;
+  width:auto;
+  object-fit:contain;
+}
+
+.cert-status-row{ display:flex; justify-content:center; margin-bottom:20px; }
+.status-badge{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--font-display); font-weight:600; font-size:15px;
+  letter-spacing:.5px; text-transform:uppercase;
+  padding:8px 20px; border-radius:30px;
+}
+.status-valid{ background:#E4F5EA; color:#1F7A45; border:1.5px solid #A6DDBB; }
+.status-expired{ background:#FFF1E0; color:#B5650B; border:1.5px solid #F3CE96; }
+
+.cert-details-table{ width:100%; border-collapse:collapse; margin-bottom:24px; }
+.cert-details-table tr{ border-bottom:1px solid var(--border); }
+.cert-details-table tr:last-child{ border-bottom:none; }
+.cert-details-table td{ padding:10px 6px; font-size:14px; }
+.cert-details-table td:first-child{
+  color: var(--text-muted); font-weight:500; width:42%;
+}
+.cert-details-table td:last-child{
+  color: var(--navy); font-weight:600; text-align:right;
+}
+
+.cert-verified-stamp-wrap{ display:flex; justify-content:center; margin-bottom:18px; }
+.cert-verified-stamp{ height:90px; width:auto; }
+
+.cert-statement{
+  font-family: 'EB Garamond', serif;
+  font-size:15px;
+  line-height:1.75;
+  color: var(--text-dark);
+  text-align:center;
+  border-top:1.5px dashed var(--border);
+  padding-top:20px;
+}
+.cert-statement strong{ color: var(--navy); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px){
+  .search-row{ flex-direction:column; }
+  .cert-box{ padding:26px 20px 30px; }
+  .cert-corner-logo{ height:26px; }
+  .cert-crest{ height:90px; }
+  .cert-details-table td{ font-size:13px; }
+}
